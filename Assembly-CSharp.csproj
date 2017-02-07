@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{148AA565-8FD9-8A58-E6D5-0813A8B24245}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_1;UNITY_5_5;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VIDEO;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\AssignSplatMap.cs" />
+     <Compile Include="Assets\Scripts\TerrainLoader.cs" />
+     <None Include="Assets\Resources\tms\10\201\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\200\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\646_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\201\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\655_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\651_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\640_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\208\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\209\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\654_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\638_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\636_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\652_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\642_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\210\645_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\202\650_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\204\649_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\647_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\648_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\643_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\205\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\211\653_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\207\639_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\203\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\206\641_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\199\637_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\212\644_h.png.aux.xml" />
+     <None Include="Assets\Resources\tms\10\213\642_h.png.aux.xml" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PlaymodeTestsRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
