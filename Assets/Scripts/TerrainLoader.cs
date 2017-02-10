@@ -16,7 +16,7 @@ public class TerrainLoader : MonoBehaviour
     }
 
     //tms folder is = x
-    //tms/x/y_h.png
+    //tms/x/x_y.png
     void GenerateTerrainGrid(int gridSize, int height, int offset, int start_x, int start_y, string path)
     {
         
@@ -53,7 +53,7 @@ public class TerrainLoader : MonoBehaviour
                 go.name = x.ToString() + "_" + y.ToString();//(start_x + x).ToString() + "_" + (start_y - y).ToString() + ".raw";
                 terrainArr[x,y] = go.GetComponent<Terrain>();
                 string terr_path = path + "/" + (start_x + x).ToString() + "/" + (start_x + x).ToString() + "_" + (start_y - y).ToString() + ".raw";
-                Debug.Log(terr_path);
+                //Debug.Log(terr_path);
                 tileArr[x,y].size = worldSize;
                 LoadTerrain(terr_path, tileArr[x,y]);
                 assignSplatMaptoTerrain(tileArr[x,y]);
@@ -62,71 +62,25 @@ public class TerrainLoader : MonoBehaviour
         //setneighbors
         setTerrainNeigboors(terrainArr);
         //fixSeam
-        for(int x = 0; x < gridSize; x++)
-        {
-            for(int y = 0; y < gridSize; y++)
-            {
-                string str = "";
-                Terrain curr;
-                try
-                {
-                    curr = terrainArr[x,y];
-                    str += curr.name + ',';
-                }
-                catch
-                {
-                    curr = null;
-                    str += "null,";
-                }
-                Terrain right;
-                try
-                {
-                    right = terrainArr[x+1,y];
-                    str += right.name+ ',';
-                }
-                catch
-                {
-                    right = null;
-                    str += "null,";
-                }
-                Terrain bottom;
-                try
-                {
-                    bottom = terrainArr[x,y-1];
-                    str += bottom.name;
-                }
-                catch
-                {
-                    bottom = null;
-                    str += "null";
-                }
-                //Debug.Log(str);
-                fixSeam(curr, right, bottom);
-            }
-        }
+        fixSeam(terrainArr);
+
 
     }
 
-            SplatPrototype[] CreateSplatTexture( Texture2D[] TerrainTextures)
-        {
-            SplatPrototype[] tex = new SplatPrototype [TerrainTextures.Length];
-            for (int i=0; i<TerrainTextures.Length; i++) {
-                    tex [i] = new SplatPrototype ();
-                    tex [i].texture = TerrainTextures [i];    //Sets the texture
-                    tex [i].tileSize = new Vector2 (15, 15);    //Sets the size of the texture
-                    //tex [i].tileSize = new Vector2 (tex [i].texture.width, tex [i].texture.height);
-            }
-            return tex;
+    SplatPrototype[] CreateSplatTexture( Texture2D[] TerrainTextures)
+    {
+        SplatPrototype[] tex = new SplatPrototype [TerrainTextures.Length];
+        for (int i=0; i<TerrainTextures.Length; i++) {
+            tex [i] = new SplatPrototype ();
+            tex [i].texture = TerrainTextures [i];    //Sets the texture
+            tex [i].tileSize = new Vector2 (15, 15);
         }
+        return tex;
+    }
 
 
-        void assignSplatMaptoTerrain(TerrainData terrainData){
-        // Get the attached terrain component
-                //Terrain terrain = gameObject.GetComponent(typeof(Terrain)) as Terrain;
-         
-        // Get a reference to the terrain data
-            //TerrainData terrainData = terrain.terrainData;
- 
+    void assignSplatMaptoTerrain(TerrainData terrainData)
+    {
         // Splatmap data is stored internally as a 3d array of floats, so declare a new empty array ready for your custom splatmap data:
         float[, ,] splatmapData = new float[terrainData.alphamapWidth, terrainData.alphamapHeight, terrainData.alphamapLayers];
          
@@ -139,7 +93,7 @@ public class TerrainLoader : MonoBehaviour
                 float x_01 = (float)x/(float)terrainData.alphamapWidth;
                  
                 // Sample the height at this location (note GetHeight expects int coordinates corresponding to locations in the heightmap array)
-                        float height = terrainData.GetHeight(Mathf.RoundToInt(y_01 * terrainData.heightmapHeight),Mathf.RoundToInt(x_01 * terrainData.heightmapWidth) );
+                float height = terrainData.GetHeight(Mathf.RoundToInt(y_01 * terrainData.heightmapHeight),Mathf.RoundToInt(x_01 * terrainData.heightmapWidth) );
                  
                 // Calculate the normal of the terrain (note this is in normalised coordinates relative to the overall terrain dimensions)
                 Vector3 normal = terrainData.GetInterpolatedNormal(y_01,x_01);
@@ -170,7 +124,8 @@ public class TerrainLoader : MonoBehaviour
                 float z = splatWeights[0] + splatWeights[1] + splatWeights[2] + splatWeights[3];
                  
                 // Loop through each terrain texture
-                for(int i = 0; i<terrainData.alphamapLayers; i++){
+                for(int i = 0; i<terrainData.alphamapLayers; i++)
+                {
                      
                     // Normalize so that sum of all texture weights = 1
                     splatWeights[i] /= z;
@@ -185,7 +140,8 @@ public class TerrainLoader : MonoBehaviour
         terrainData.SetAlphamaps(0, 0, splatmapData);
     }
 
-    void setTerrainNeigboors(Terrain[ , ] terrainArr){
+    void setTerrainNeigboors(Terrain[ , ] terrainArr)
+    {
         int gridSize = m_gridSize;
         for(int x = 0; x < gridSize; x++)
         {
@@ -290,60 +246,98 @@ public class TerrainLoader : MonoBehaviour
 
     }
 
-    void fixSeam(Terrain cur, Terrain right, Terrain bottom)
-     {
- 
-         float[,] newHeights = new float[m_resolution, m_resolution];
-         float[,] rightHeights = new float[m_resolution, m_resolution], bottomHeights = new float[m_resolution, m_resolution];
- 
-         if (right != null)
-         {
-             rightHeights = right.terrainData.GetHeights(0, 0, m_resolution, m_resolution);
-         }
-         if (bottom != null)
-         {
-             bottomHeights = bottom.terrainData.GetHeights(0, 0, m_resolution, m_resolution);
-         }
- 
-         if (right != null || bottom != null)
-         {
- 
-             newHeights = cur.terrainData.GetHeights(0, 0, m_resolution, m_resolution);
- 
-             for (int i = 0; i < m_resolution; i++)
-             {
-                 if (right != null)
-                     newHeights[i, m_resolution - 1] = rightHeights[i, 0];
- 
-                 if (bottom != null)
-                     newHeights[0, i] = bottomHeights[m_resolution - 1, i];
-             }
-             cur.terrainData.SetHeights(0, 0, newHeights);
-         }
-     }
+    void fixSeam(Terrain[ , ] terrainArr)
+    {
+        for(int x = 0; x < m_gridSize; x++)
+        {
+            for(int y = 0; y < m_gridSize; y++)
+            {
+                string str = "";
+                Terrain cur;
+                try
+                {
+                    cur = terrainArr[x,y];
+                    str += cur.name + ',';
+                }
+                catch
+                {
+                    cur = null;
+                    str += "null,";
+                }
+                Terrain right;
+                try
+                {
+                    right = terrainArr[x+1,y];
+                    str += right.name+ ',';
+                }
+                catch
+                {
+                    right = null;
+                    str += "null,";
+                }
+                Terrain bottom;
+                try
+                {
+                    bottom = terrainArr[x,y-1];
+                    str += bottom.name;
+                }
+                catch
+                {
+                    bottom = null;
+                    str += "null";
+                }
+                //Debug.Log(str);
+                float[,] newHeights = new float[m_resolution, m_resolution];
+                float[,] rightHeights = new float[m_resolution, m_resolution], bottomHeights = new float[m_resolution, m_resolution];
+        
+                if (right != null)
+                {
+                    rightHeights = right.terrainData.GetHeights(0, 0, m_resolution, m_resolution);
+                }
+                if (bottom != null)
+                {
+                    bottomHeights = bottom.terrainData.GetHeights(0, 0, m_resolution, m_resolution);
+                }
+        
+                if (right != null || bottom != null)
+                {
+        
+                    newHeights = cur.terrainData.GetHeights(0, 0, m_resolution, m_resolution);
+        
+                    for (int i = 0; i < m_resolution; i++)
+                    {
+                        if (right != null)
+                            newHeights[i, m_resolution - 1] = rightHeights[i, 0];
+        
+                        if (bottom != null)
+                            newHeights[0, i] = bottomHeights[m_resolution - 1, i];
+                    }
+                    cur.terrainData.SetHeights(0, 0, newHeights);
+                }
+            }
+        }
+    }
 
 
-void LoadTerrain(string aFileName, TerrainData aTerrain)
- {
-     Debug.Log(m_resolution.ToString());
-     int h = m_resolution;//aTerrain.heightmapHeight;
-     int w = m_resolution;//aTerrain.heightmapWidth;
-     float[,] data = new float[h, w];
-     var file = File.OpenRead(aFileName);
-     BinaryReader reader = new BinaryReader(file);
-     {
-         for (int y = 0; y < h; y++)
-         {
-             for (int x = 0; x < w; x++)
-             {
-                 float v = (float)reader.ReadUInt16() / 0xFFFF;
-                 data[y, x] = v;
-             }
-         }
-     }
-     aTerrain.SetHeights(0, 0, data);
-     file.Close();
- }
+    void LoadTerrain(string aFileName, TerrainData aTerrain)
+    {
+        Debug.Log(m_resolution.ToString());
+        int h = m_resolution;//aTerrain.heightmapHeight;
+        int w = m_resolution;//aTerrain.heightmapWidth;
+        float[,] data = new float[h, w];
+        var file = File.OpenRead(aFileName);
+        BinaryReader reader = new BinaryReader(file);
+            for (int y = 0; y < h; y++)
+            {
+                for (int x = 0; x < w; x++)
+                {
+                    float v = (float)reader.ReadUInt16() / 0xFFFF;
+                    data[y, x] = v;
+                }
+            }
+        aTerrain.SetHeights(0, 0, data);
+        file.Close();
+    }
 
 
 

@@ -68,26 +68,27 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             YawInput = yawInput;
             ThrottleInput = throttleInput;
             AirBrakes = airBrakes;
+            if(m_Rigidbody != null){
+                ClampInputs();
 
-            ClampInputs();
+                CalculateRollAndPitchAngles();
 
-            CalculateRollAndPitchAngles();
+                AutoLevel();
 
-            AutoLevel();
+                CalculateForwardSpeed();
 
-            CalculateForwardSpeed();
+                ControlThrottle();
 
-            ControlThrottle();
+                CalculateDrag();
 
-            CalculateDrag();
+                CaluclateAerodynamicEffect();
 
-            CaluclateAerodynamicEffect();
+                CalculateLinearForces();
 
-            CalculateLinearForces();
+                CalculateTorque();
 
-            CalculateTorque();
-
-            CalculateAltitude();
+                CalculateAltitude();
+            }
         }
 
 
@@ -145,8 +146,10 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         private void CalculateForwardSpeed()
         {
             // Forward speed is the speed in the planes's forward direction (not the same as its velocity, eg if falling in a stall)
-            var localVelocity = transform.InverseTransformDirection(m_Rigidbody.velocity);
-            ForwardSpeed = Mathf.Max(0, localVelocity.z);
+            if(m_Rigidbody != null){
+                var localVelocity = transform.InverseTransformDirection(m_Rigidbody.velocity);
+                ForwardSpeed = Mathf.Max(0, localVelocity.z);
+            }
         }
 
 
